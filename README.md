@@ -1,78 +1,111 @@
-<h1 align="center"> 📷 SECURE DATA HIDING IN IMAGES USING STEGANOGRAPHY 📷 </h1>
+# Secure Image Steganography with AES Encryption 🔒
 
-![image](https://github.com/user-attachments/assets/0cf47d73-05cb-4395-bdc8-651e96b7d403)
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.13.0-FF4B4B)](https://streamlit.io/)
+[![OpenCV](https://img.shields.io/badge/OpenCV-4.7.0-brightgreen)](https://opencv.org/)
 
-## 📝 Description
-The Image-Based Steganography Tool is a Python-powered application that enables users to securely hide messages within images using AES encryption and LSB (Least Significant Bit) steganography. This tool provides a robust method for secure communication by embedding encrypted messages into images.
+A secure data hiding system that combines AES-256 encryption with LSB steganography to protect sensitive information during transmission.
 
-## ⭐ Features
+![Project Demo](https://github.com/x0lg0n/AICTE-INTERNSHIP-PROJETC/blob/master/preview.png)
 
-- 🔐 **AES Encryption**: Encrypts messages using AES-CBC mode before embedding them in images.
-- 🖼️ **LSB Steganography**: Hides encrypted messages in images at the pixel level.
-- 📤 **Image Upload & Download**: Allows users to upload images, encode/decode messages, and download encrypted images.
-- 🛠 **User-Friendly Interface**: Built with Streamlit for a seamless experience.
+## Features ✨
 
-## 📥 Installation
+- **Military-grade Encryption** 🔐
+  - AES-256-CBC with PBKDF2 key derivation
+  - Secure password hashing with 100,000 iterations
+  - Random salt and IV generation
 
-1. **Clone this repository:**
-    ```sh
-    git clone https://github.com/your-username/ACITE-PROJECT-Steganography.git
-    cd ACITE-PROJECT-Steganography
-    ```
-2. **Install required dependencies:**
-    ```sh
-    pip install streamlit opencv-python numpy pycryptodome
-    ```
-3. **Run the Application:**
-    ```sh
-    streamlit run stego.py
-    ```
+- **Advanced Steganography** 🖼️
+  - LSB (Least Significant Bit) embedding
+  - Automatic capacity calculation
+  - Header-based length encoding
+  - Multi-image format support (PNG, JPG, JPEG)
 
-## 🛠 Usage
+- **User-friendly Interface** 💻
+  - Streamlit-based web UI
+  - Drag-and-drop functionality
+  - Real-time feedback
+  - Cross-platform compatibility
 
-### 🔵 Encoding a Message
+## Installation ⚙️
 
-1. Upload a PNG image.
-2. Enter your secret message.
-3. Provide a passcode (used for encryption & decryption).
-4. Click "Encode & Save Image".
-5. Download the newly encrypted image.
+1. Clone the repository:
+```bash
+git clone https://github.com/x0lg0n/AICTE-INTERNSHIP-PROJETC.git
+cd AICTE-INTERNSHIP-PROJECT
+```
+## Install dependencies:
 
-### 🟢 Decoding a Message
+```bash
+pip install -r requirements.txt
+```
 
-1. Upload an encrypted image.
-2. Enter the correct passcode.
-3. Click "Decode Message".
-4. View the decrypted message.
+## Usage 🚀
+Start the application:
 
-## 📸 Screenshots
+```bash
+streamlit run app.py
+```
 
-### Encode Message
+## Encoding Process:
 
-![encoded example](https://github.com/user-attachments/assets/36eacc75-acf5-4d70-b5f1-24f70589dc59)
+- Upload cover image
 
-### Decode Message
+- Enter secret message
 
-![image](https://github.com/user-attachments/assets/e54e22aa-afcb-41b5-a1f0-e6116f33a867)
+- Set encryption password
 
-## 🛡️ Security Considerations
+- Download protected image
 
-- AES encryption ensures strong message protection.
-- Messages are not retrievable without the correct passcode.
-- Ensure images are stored securely to prevent unauthorized access.
+## Encoding Demo
+![Encoding Demo](https://github.com/x0lg0n/AICTE-INTERNSHIP-PROJETC/blob/master/Secure-Steganography-2-0.png)
 
-## 👨‍💻 Technologies Used
+## Decoding Process:
 
-- Python 🐍
-- Streamlit 📊
-- OpenCV 📷
-- PyCryptodome 🔐
+- Upload protected image
 
-## 🤝 Contributing
+- Enter decryption password
 
-Contributions are welcome! Feel free to fork this repository and submit a pull request.
+- View extracted message
 
-## 🌐 Connect with Me 
+## Decoding Demo
+![Decoding Demo](https://github.com/x0lg0n/AICTE-INTERNSHIP-PROJETC/blob/master/Secure-Steganography-2-0..png)
 
-- 📧 [Email](mailto:gauravghandat12@gmail.com)
-- 💼 [LinkedIn](www.linkedin.com/in/gaurav-ghandat-68a5a22b4)
+## Technical Architecture 🧠
+```mermaid
+graph TD
+    A[Secret Message] --> B[AES-256 Encryption]
+    B --> C[Base64 Encoding]
+    C --> D[LSB Steganography]
+    D --> E[Protected Image]
+    E --> F[Transmission]
+    F --> G[LSB Extraction]
+    G --> H[Base64 Decoding]
+    H --> I[AES-256 Decryption]
+    I --> J[Original Message]
+```
+## 🔧 Key Components  
+
+| **Component**       | **Technology Used**   | **Purpose**                    |
+|---------------------|-----------------------|--------------------------------|
+| 🔐 **Encryption**   | AES-256-CBC           | Data confidentiality           |
+| 🔑 **Key Derivation** | PBKDF2-HMAC-SHA256   | Secure password hashing        |
+| 🖼️ **Steganography** | LSB Embedding         | Data concealment               |
+| 🎨 **Image Processing** | OpenCV             | Pixel manipulation             |
+| 🛠️ **UI Framework**   | Streamlit            | User interface                 |
+
+
+## Contributors 👥
+
+- **[Siddhartha Kunwar](https://github.com/x0lg0n)**   
+
+## License 📄
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments 🙏
+
+- Cryptographic functions powered by `pycryptodome`
+
+- Image processing handled by `OpenCV`
+
+- UI components from `Streamlit`
